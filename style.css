@@ -1,0 +1,263 @@
+/******************************
+		RESET STYLES
+******************************/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, /*pre,*/
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, main, footer, header, hgroup, menu, nav, section, summary {display: block;}
+audio, canvas, video {display: inline-block;}
+audio:not([controls]) {display: none; height: 0;}
+[hidden] {display: none;}
+html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
+body {line-height: 1.2;}
+ol, ul, li {list-style: none;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after,
+q:before, q:after {content: ''; content: none;}
+table {border-collapse: collapse; border-spacing: 0;}
+fieldset, img, abbr, acronym, a img {border: 0;}
+
+/******************************
+		GLOBAL STYLES
+******************************/
+html, body {
+	height: auto; 
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing: border-box; 
+	box-sizing: border-box;
+}
+
+body {font: normal normal 400 1em/1.5 Arial, sans-serif;}
+a {text-decoration: none;}
+a:hover {text-decoration: none;}
+a:active {outline: none;}
+a:focus {outline: 1px dotted;}
+img, embed, iframe, object, audio, video, canvas {max-width: 100%;}
+img {height: auto; vertical-align: top;}
+.clearfix {clear: both;}
+.clearfix:after {
+    clear: both;
+    content: ".";
+    display: block;
+    font-size: 0;
+    height: 0;
+    visibility: hidden;
+}
+.icon-hide, 
+.access-hide {
+	position: relative; 
+	top: 0; 
+	left: 0; 
+	display: none;
+}
+
+/******************************
+		HEADER STYLES
+******************************/
+#top, .top-menu {width: 100%;}
+
+#top, .top-bg, .top-menu ul {max-width: 100%;}
+
+.navli {width: 75em;}
+
+.top-menu ul {margin: 0 auto;}
+
+.top-bg, .top-menu {background-color: #030100;}
+
+.top-bg {height: 300px; background-color: teal;}
+	.top-bg h1 {font-weight: bold; color: #feffff; padding: 20px 0; font-size: 2em; text-align: center;}
+
+.navli {text-transform: uppercase;}
+.navli > li {float: left; display: inline-block;}
+.navli li, .navli a {color: #feffff; color: rgba(254,255,255,0.8); text-align: center;}
+.navli a {display: block; padding: 17px 15px; font-size: 90%;}
+
+.navli > .dropdn > .parent:after, 
+.navli > li > ul > .dropdn > .parent:after {
+	margin-left: 5px;
+	font-size: 0.5em;
+	color: #feffff;
+	vertical-align: middle;
+}
+
+.navli > .dropdn > .parent:after {content: "\25BC";}
+.navli > li > ul > .dropdn > .parent:after {content: "\25B6";}
+
+.no-touch .navli a:hover {
+	border-bottom: 0;
+	text-shadow: 2px 1px 7px #fff;
+	color: #feffff;
+	color: rgba(254,255,255,1);
+}
+
+.navli>li>ul, 
+.navli>li>ul>li>ul  {
+    position: absolute;
+	opacity: 0;
+	background-color: #030100; 
+	display: block;
+	visibility: hidden;
+	z-index: 1000;
+}
+
+.navli>li>ul>li {position: relative;}
+
+.navli > li:hover > ul {
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-ms-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+}
+
+.navli>li:hover>ul, 
+.navli>li>ul>li:hover>ul {
+    display: inline-block;
+    color: #feffff;
+	opacity: 1;
+	visibility: visible;
+}
+
+.navli>li>ul>li:hover>ul {width: 100px;}
+
+.navli>li>ul>li:hover>ul {top: 0; left: 100%;}
+
+.navli>li>ul>li, 
+.navli>li>ul>li>ul>li {float: none; display: block;}
+
+#menubtn, .nav-more {display: none;}
+
+@media screen and (max-width: 640px) {
+
+	/*Menu Styles*/
+	header .navli li {float: none;}
+	.navli li, .navli a {text-align: left;}
+	a#menubtn {
+	    display: block;
+	    margin-left: 5px;
+	    padding: 15px 10px;
+	    color: #feffff;
+	}
+
+	.icon-menu {float: right;}
+	a#menubtn:hover, .navli a:hover {border-bottom: 0;}
+
+		.navli, .navli > ul ul {
+			overflow: hidden;
+			max-height: 0;
+			background: #808080;
+			background: rgba(0,0,0,0.1);
+		}
+
+		.navli.activ, .navli > ul ul.activ {
+			max-height: 100em;
+		}
+
+		.navli li, 
+		.navli li a, 
+		.navli li ul li a {display: block;}
+
+		.navli li,
+		.navli li a, 
+		.navli li ul li a, 
+		.navli li ul li ul li a  {
+			position: relative;
+		}
+
+		.navli>li:hover>ul, 
+		.navli>li>ul>li:hover>ul {
+		    width: 100%;
+		}
+
+		.navli li {border-bottom: 1px solid #555;}
+		.navli li ul li {border-bottom-color: #e1eff9;}
+		.navli li ul li ul li {border-bottom-color: #030100;}
+			.navli li ul li:last-child {border-bottom: 0;}
+
+		.navli li ul li a, .navli li ul li a:hover {background-color: #2784C8;}
+		.navli li ul li ul li a, .navli li ul li ul li a:hover {background-color: #1b5a88;}
+
+		.navli a:hover, .navli .current-menu-item, .navli .current-menu-parent {background: transparent;}
+
+		.navli > li:hover > ul {
+			-webkit-transition: all 0s ease;
+			-moz-transition: all 0s ease;
+			-ms-transition: all 0s ease;
+			-o-transition: all 0s ease;
+			transition: all 0s ease;
+		}
+
+		.navli>li:hover>ul, 
+		.navli>li>ul>li:hover>ul {
+			display: none;
+			visibility: hidden;
+			opacity: 0;
+			color: transparent;
+		}
+
+		.navli>li>ul.activ, 
+		.navli>li>ul>li>ul.activ {
+		    position: relative;
+		    display: block;
+			opacity: 1;
+			visibility: visible;
+			z-index: 2999;
+		}
+
+		.navli>li>ul>li:hover>ul {
+			top: auto;
+			left: auto;
+		}
+		
+		.parent {position: absolute;}
+
+		.navli > .dropdn > .parent:after, 
+		.navli > li > ul > .dropdn > .parent:after {content: "";}
+
+		.navli li .nav-more, 
+		.navli li ul li .nav-more  {
+	        cursor: pointer;
+	    	z-index: 2000;
+	        display: block;
+	        position: absolute;
+			top: 0;
+			right: 0;
+			height: 100%;
+			padding: 0 23px;
+			color: #feffff;
+    	}
+
+    	.navli li .nav-more {background-color: #2784C8;}
+		.navli li ul li .nav-more  {background-color: #1b5a88;}
+
+	    	.navli li.dropdn > .nav-more:after, 
+	    	.navli li ul li.dropdn > .nav-more:after {
+				content: '+';
+				position: absolute;
+				top: 0;
+				right: 0;
+				display: block;
+				padding: 7px 17px;
+				font-size: 1.625em;
+			}
+			.navli li.dropdn > .nav-more.activ:after, 
+			.navli li ul li.dropdn > .nav-more.activ:after {content: "-";}
+
+}
